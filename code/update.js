@@ -28,7 +28,7 @@ const sendUpdate = async (data)=> {
       headers: headers,
       body: JSON.stringify(data),
     });
-    test()
+    test(data)
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
