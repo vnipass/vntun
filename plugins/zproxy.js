@@ -7,7 +7,7 @@ async function main(params) {
   try {
     const response = await axios.get(`https://api.zingproxy.com/getip/${id}`);
     if (response.data) {
-      let data = response.data.data || null;
+      let data = response.data || null;
       let proxy = data.info?.httpProxy || '';
       if (proxy !== '') {
         // Tách chuỗi proxy thành các phần (ip, port, username, password)
