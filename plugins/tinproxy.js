@@ -8,6 +8,7 @@ async function main(params) {
   try {
     const response = await axios.get(`https://api.tinproxy.com/proxy/get-new-proxy?api_key=${id}&authen_ips=${ip}`);
     if (response.data) {
+      console.log(response.data)
       let data = response.data || null;
       if (data) {
         return `${data.authentication?.username}:${data.authentication?.password}@${data.http_ipv4}`
